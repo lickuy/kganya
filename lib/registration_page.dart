@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'complete_registration.dart';
 import 'login_page.dart';
 
@@ -20,7 +19,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Registration'),
+        title: const Text(''),
         backgroundColor: Colors.green[800],
       ),
       body: SingleChildScrollView(
@@ -29,24 +28,26 @@ class _RegistrationPageState extends State<RegistrationPage> {
           child: Form(
             key: _formKey,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 20),
-                Text(
-                  'SIGN UP',
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green[800],
+                Center(
+                  child: Text(
+                    'SIGN UP',
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.green[800],
+                    ),
                   ),
-                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Full Names',
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(color: Colors.grey),
                     ),
                   ),
                   validator: (String? value) {
@@ -58,10 +59,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Surname',
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(color: Colors.grey),
                     ),
                   ),
                   validator: (String? value) {
@@ -73,10 +75,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'ID/Passport',
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(color: Colors.grey),
                     ),
                   ),
                   validator: (String? value) {
@@ -89,10 +92,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 const SizedBox(height: 20),
                 TextFormField(
                   keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Email Address',
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(color: Colors.grey),
                     ),
                   ),
                   validator: (String? value) {
@@ -105,10 +109,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 const SizedBox(height: 20),
                 TextFormField(
                   keyboardType: TextInputType.phone,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Cell No.',
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(color: Colors.grey),
                     ),
                   ),
                   validator: (String? value) {
@@ -121,10 +126,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 const SizedBox(height: 20),
                 TextFormField(
                   keyboardType: TextInputType.phone,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Membership No.',
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(color: Colors.grey),
                     ),
                   ),
                   validator: (String? value) {
@@ -146,10 +152,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       child: Text(value),
                     );
                   }).toList(),
-                  decoration: const InputDecoration(
-                    labelText: 'Selecte Branch',
+                  decoration: InputDecoration(
+                    labelText: 'Select Branch',
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(color: Colors.grey),
                     ),
                   ),
                   onChanged: (String? value) {},
@@ -184,9 +191,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         );
                       }
                     },
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.green[800]!),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green[800],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                     ),
                     child: const Text('Register',
                         style: TextStyle(color: Colors.white)),

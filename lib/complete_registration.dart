@@ -19,7 +19,7 @@ class _RegistrationPagesState extends State<RegistrationPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Registration'),
+        title: const Text(''),
         backgroundColor: Colors.green[800],
       ),
       body: SingleChildScrollView(
@@ -28,7 +28,8 @@ class _RegistrationPagesState extends State<RegistrationPages> {
           child: Form(
             key: _formKey,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment:
+                  MainAxisAlignment.center, // Center the content vertically
               children: [
                 const SizedBox(height: 20),
                 Text(
@@ -42,10 +43,12 @@ class _RegistrationPagesState extends State<RegistrationPages> {
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Email Address',
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(
+                          15), // Increase the radius to 15
+                      borderSide: const BorderSide(color: Colors.grey),
                     ),
                   ),
                   validator: (String? value) {
@@ -60,8 +63,10 @@ class _RegistrationPagesState extends State<RegistrationPages> {
                   obscureText: !_passwordVisible,
                   decoration: InputDecoration(
                     labelText: 'Password',
-                    border: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(
+                          15), // Increase the radius to 15
+                      borderSide: const BorderSide(color: Colors.grey),
                     ),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -88,8 +93,10 @@ class _RegistrationPagesState extends State<RegistrationPages> {
                   obscureText: !_confirmPasswordVisible,
                   decoration: InputDecoration(
                     labelText: 'Confirm Password',
-                    border: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(
+                          15), // Increase the radius to 15
+                      borderSide: const BorderSide(color: Colors.grey),
                     ),
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -121,13 +128,18 @@ class _RegistrationPagesState extends State<RegistrationPages> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const LoginPage()),
+                            builder: (context) => const LoginPage(),
+                          ),
                         );
                       }
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor:
                           Colors.green[800], // change background color here
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                            15), // Increase the radius to 15
+                      ),
                     ),
                     child: const Text('REGISTER'),
                   ),
@@ -142,7 +154,8 @@ class _RegistrationPagesState extends State<RegistrationPages> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const LoginPage()),
+                            builder: (context) => const LoginPage(),
+                          ),
                         );
                       },
                       child: const Text(

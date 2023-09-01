@@ -1,5 +1,3 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
@@ -12,14 +10,13 @@ class ForgotPasswordPage extends StatefulWidget {
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  // ignore: unused_field
   String _email = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Forgot Password'),
+        title: const Text(''),
         backgroundColor: Colors.green[800],
       ),
       body: SingleChildScrollView(
@@ -51,10 +48,12 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 const SizedBox(height: 20),
                 TextFormField(
                   keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: 'Email Address',
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(
+                          15), // Increase the radius to 15
+                      borderSide: const BorderSide(color: Colors.grey),
                     ),
                   ),
                   validator: (String? value) {
@@ -96,6 +95,10 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor:
                           Colors.green[800], // change background color here
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                            15), // Increase the radius to 15
+                      ),
                     ),
                     child: const Text('RESET PASSWORD'),
                   ),
